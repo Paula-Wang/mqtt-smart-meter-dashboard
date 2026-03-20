@@ -1,64 +1,70 @@
-📡 MQTT Smart Meter Dashboard
+# 📡 MQTT Smart Meter Dashboard
 
 A real-time IoT dashboard that visualizes smart meter telemetry using MQTT, Node.js, and Chart.js.
 
-🚀 Features
+---
 
-Real-time data streaming via MQTT
+## 🚀 Features
 
-Live updating dashboard (no page refresh)
+- 📡 Real-time data streaming via MQTT  
+- ⚡ Live updating dashboard (no page refresh)  
+- 📊 Voltage and current visualization using charts  
+- 💰 Balance monitoring  
+- 🎨 Clean and responsive UI  
 
-Voltage and current visualization using charts
+---
 
-Balance monitoring
+## 🖼️ Preview
 
-Clean and responsive UI
+![Dashboard Screenshot](./screenshot.png)
 
-🧠 How It Works
+---
 
-The application connects to an MQTT broker (mqtt://byte-iot.net:1883)
+## 🧠 How It Works
 
-It subscribes to /topic/# to receive smart meter data
+1. The application connects to an MQTT broker  
+   `mqtt://byte-iot.net:1883`
 
-Incoming messages are parsed and sent to the frontend using WebSockets (Socket.IO)
+2. It subscribes to:
 
-The frontend updates charts and metrics in real time
+/topic/#
 
-📊 Metrics Displayed
+3. Incoming smart meter data is parsed and processed
 
-Voltage (V) – Electrical supply level
+4. Data is sent to the frontend using **WebSockets (Socket.IO)**
 
-Current (A) – Power consumption
+5. The dashboard updates in real-time:
+- Cards (Voltage, Current, Balance)
+- Charts (live trends)
 
-Balance (KES) – Remaining prepaid energy
+---
 
-🛠️ Tech Stack
+## 📊 Metrics Displayed
 
-Node.js
+| Metric   | Description                  |
+|---------|------------------------------|
+| Voltage | Electrical supply level (V)  |
+| Current | Power consumption (A)        |
+| Balance | Remaining prepaid energy (KES)|
 
-Express.js
+---
 
-MQTT.js
+## 🛠️ Tech Stack
 
-Socket.IO
+- Node.js
+- Express.js
+- MQTT.js
+- Socket.IO
+- Chart.js
 
-Chart.js
+---
 
-▶️ Run Locally
+## ▶️ Run Locally
+
+```bash
 npm install
 node app.js
 
-Open:
+Open in browser:
 
 http://localhost:3000
-📌 Use Case
-
-This dashboard can be extended for:
-
-Smart energy monitoring
-
-IoT telemetry systems
-
-Fleet/telematics tracking
-
-Real-time analytics dashboards
